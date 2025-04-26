@@ -44,85 +44,6 @@
                 android:orientation="vertical"
                 >
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="290sp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="30dp"
-                    android:background="@drawable/grey_border" >
-
-                    <EditText
-                        android:hint="Enter Question:"
-                        android:layout_height="wrap_content"
-                        android:layout_width="match_parent"
-                        android:textColor="@color/black"
-                        android:textColorHint="#353535"
-                        android:textSize="20sp"
-                        android:layout_marginTop="15sp"
-                        />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="#FFFFFF"
-                        android:layout_centerVertical="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginStart="1dp"
-                        android:layout_marginEnd="40dp"
-                    />
-
-                    <EditText
-                        android:hint="Enter Answer:"
-                        android:layout_height="wrap_content"
-                        android:layout_width="match_parent"
-                        android:textColor="@color/black"
-                        android:textColorHint="#353535"
-                        android:textSize="20sp"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="70sp"
-                        />
-                    </RelativeLayout>
-
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="290sp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="30dp"
-                    android:background="@drawable/grey_border">
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15sp"
-                        android:hint="Enter Question:"
-                        android:textColor="@color/black"
-                        android:textColorHint="#353535"
-                        android:textSize="20sp" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="1dp"
-                        android:layout_marginEnd="40dp"
-                        android:background="#FFFFFF" />
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="70sp"
-                        android:hint="Enter Answer:"
-                        android:textColor="@color/black"
-                        android:textColorHint="#353535"
-                        android:textSize="20sp" />
-                </RelativeLayout>
-
-
             </LinearLayout>
         </ScrollView>
 
@@ -157,6 +78,7 @@
                 android:src="@drawable/add"
                 android:scaleType="centerInside"
                 android:background="@drawable/blue_icon_button_background"
+                android:onClick="add_card"
                 />
 
             <Button
