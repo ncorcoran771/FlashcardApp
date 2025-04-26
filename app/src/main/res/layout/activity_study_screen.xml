@@ -7,4 +7,160 @@
     android:layout_height="match_parent"
     tools:context=".Study_Screen">
 
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:weightSum="1"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/white"
+            >
+            <Button
+                android:layout_width="130sp"
+                android:layout_height="70sp"
+                android:text="Return"
+                android:backgroundTint="#5391BD"
+                android:textSize="25sp"
+                android:layout_marginStart="15sp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                />
+            <ImageButton
+                android:id="@+id/Options"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="13dp"
+                android:src="@drawable/settings"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:scaleType="centerInside"
+                android:background="@drawable/icon_button_background"
+                />
+
+        </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/flashcard_container"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                >
+
+                <RelativeLayout
+                    android:layout_width="350sp"
+                    android:layout_height="270sp"
+                    android:background="@drawable/grey_border"
+                    >
+                    <TextView
+                        android:text="Question:"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="30sp"
+                        android:layout_marginStart="15sp"
+                        />
+
+                    <TextView
+                        android:text="What is a Semaphore?"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="30sp"
+                        android:layout_marginStart="15sp"
+                        android:layout_centerInParent="true"
+                        android:textColor="#363636"
+                        />
+
+                    <TextView
+                        android:text="Click to Flip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="30sp"
+                        android:textColor="#AAAAAA"
+                        android:layout_marginStart="15sp"
+                        android:layout_centerInParent="true"
+                        android:layout_alignParentBottom="true"
+                        />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="#5391BD"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+
+
+            >
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="150sp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                >
+
+            <Button
+                android:id="@+id/back_button"
+                android:layout_width="130sp"
+                android:layout_height="70sp"
+                android:backgroundTint="#808080"
+                android:text="Prev"
+                android:textSize="25sp"
+                android:layout_marginRight="15sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1/25"
+                android:textSize="25sp"
+                />
+
+                <Button
+                    android:id="@+id/save_button"
+                    android:layout_width="130sp"
+                    android:layout_height="70sp"
+
+                    android:backgroundTint="#808080"
+                    android:text="Next"
+                    android:layout_marginLeft="15sp"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:background="@color/white"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="75sp"
+                android:layout_marginStart="35sp"
+                android:layout_marginEnd="35sp"
+                >
+
+                <RelativeLayout
+                    android:layout_width="15sp"
+                    android:layout_height="30sp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#80CEFF"
+                    >
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
