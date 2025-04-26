@@ -27,7 +27,9 @@
                 android:layout_centerVertical="true"
                 android:src="@drawable/add"
                 android:scaleType="centerInside"
-                android:background="@drawable/icon_button_background"/>
+                android:background="@drawable/icon_button_background"
+                android:onClick="goToCreation"
+                />
             <ImageButton
                 android:id="@+id/Options"
                 android:layout_width="80dp"

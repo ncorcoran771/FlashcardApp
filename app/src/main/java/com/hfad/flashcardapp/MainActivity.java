@@ -1,8 +1,10 @@
 package com.hfad.flashcardapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
@@ -25,6 +27,11 @@ public class MainActivity extends AppCompatActivity {
             this.build_buttons();
             return insets;
         });
+    }
+
+    public void goToCreation(View HOMESCREEN){
+        Intent intent = new Intent(MainActivity.this, Card_Creation_Screen.class);
+        startActivity(intent);
     }
 
     private void set_flashcard_settings(Button new_button){

@@ -7,4 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".Card_Creation_Screen">
 
+    <TextView
+        android:layout_width="242dp"
+        android:layout_height="118dp"
+        android:layout_marginEnd="84dp"
+        android:width="50dp"
+        android:height="50dp"
+        android:text="Hello World"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="255dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
