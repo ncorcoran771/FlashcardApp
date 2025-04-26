@@ -53,6 +53,13 @@ public class MainActivity extends AppCompatActivity {
         Button new_button = new Button(this);
         new_button.setText(subject);
         set_flashcard_settings(new_button);
+        new_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToStudy(v);
+            }
+        });
+
         return new_button;
     }
     private void build_buttons(){
@@ -62,5 +69,10 @@ public class MainActivity extends AppCompatActivity {
             Button new_button = this.create_flashcard_button(subject);
             card_segment.addView(new_button);
         }
+    }
+
+    public void goToStudy(View view){
+        Intent intent = new Intent(MainActivity.this, Study_Screen.class);
+        startActivity(intent);
     }
 }

@@ -1,5 +1,6 @@
 package com.hfad.flashcardapp;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
@@ -106,5 +107,15 @@ public class Card_Creation_Screen extends AppCompatActivity {
         LinearLayout card_container = findViewById(R.id.flashcard_container);
         RelativeLayout new_card = _create_card();
         card_container.addView(new_card);
+    }
+
+    public void goToMenu(View view){
+        Intent intent = new Intent(Card_Creation_Screen.this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToStudy(View view){
+        Intent intent = new Intent(Card_Creation_Screen.this, Study_Screen.class);
+        startActivity(intent);
     }
 }

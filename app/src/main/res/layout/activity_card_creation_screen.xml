@@ -66,7 +66,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="30sp"
                 android:layout_marginStart="15sp"
-
+                android:onClick="goToMenu"
             />
 
             <ImageButton
@@ -92,7 +92,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginBottom="30sp"
                 android:layout_marginEnd="15sp"
-
+                android:onClick="goToStudy"
                 />
 
 

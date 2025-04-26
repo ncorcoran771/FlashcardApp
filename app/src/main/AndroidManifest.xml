@@ -13,6 +13,10 @@
         android:theme="@style/Theme.FlashcardApp"
         tools:targetApi="31">
         <activity
+            android:name=".Study_Screen"
+            android:exported="false"
+            android:theme="@style/Theme.FlashcardApp" />
+        <activity
             android:name=".Card_Creation_Screen"
             android:exported="false" />
         <activity
