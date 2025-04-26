@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Flashcard App</string>
+    <string-array name="flashcard_subjects">
+        <item>COSC 330 Quiz 1</item>
+        <item>COSC 450 Mini-test </item>
+        <item>Macro-economics Final</item>
+        <item>Calc 2 Quiz</item>
+        <item>Bio Lab Quiz</item>
+        <item>History 101</item>
+    </string-array>
 </resources>

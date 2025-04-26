@@ -7,14 +7,53 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#5391BD"
+        >
+
+            <ImageButton
+                android:id="@+id/New_Cards"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="13dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/add"
+                android:scaleType="centerInside"
+                android:background="@drawable/icon_button_background"/>
+            <ImageButton
+                android:id="@+id/Options"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_toStartOf="@id/New_Cards"
+                android:layout_alignTop="@id/New_Cards"
+                android:layout_marginEnd="13dp"
+                android:src="@drawable/settings"
+                android:scaleType="centerInside"
+                android:background="@drawable/icon_button_background"
+            />
+    </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    <LinearLayout
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="match_parent"
+        android:id="@+id/flashcard_buttons"
+        android:orientation="vertical"
+        />
+
+        </ScrollView>
+
+
+</LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
