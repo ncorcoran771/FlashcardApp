@@ -58,6 +58,7 @@
                     android:layout_width="350sp"
                     android:layout_height="270sp"
                     android:background="@drawable/grey_border"
+                    android:id="@+id/flashcard"
                     >
                     <TextView
 
