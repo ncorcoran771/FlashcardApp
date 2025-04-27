@@ -29,6 +29,7 @@
                 android:layout_marginStart="15sp"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
+                android:onClick="goToMenu"
                 />
             <ImageButton
                 android:id="@+id/Options"
