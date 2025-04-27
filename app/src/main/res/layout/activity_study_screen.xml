@@ -120,12 +120,14 @@
                 android:text="Prev"
                 android:textSize="25sp"
                 android:layout_marginRight="15sp"
+                android:onClick="prev_card"
                 />
 
             <TextView
+                android:id="@+id/card_indexer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1/25"
+                android:text="@string/card_index"
                 android:textSize="25sp"
                 />
 
@@ -137,6 +139,7 @@
                     android:backgroundTint="#808080"
                     android:text="Next"
                     android:layout_marginLeft="15sp"
+                    android:onClick="next_card"
                     android:textSize="25sp" />
             </LinearLayout>
 
