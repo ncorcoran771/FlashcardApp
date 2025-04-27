@@ -153,9 +153,11 @@
                 android:layout_marginBottom="75sp"
                 android:layout_marginStart="35sp"
                 android:layout_marginEnd="35sp"
+                android:id="@+id/full_bar"
                 >
 
                 <RelativeLayout
+                    android:id="@+id/loaded_bar"
                     android:layout_width="15sp"
                     android:layout_height="30sp"
                     android:layout_alignParentBottom="true"
