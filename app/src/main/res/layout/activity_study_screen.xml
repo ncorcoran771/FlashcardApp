@@ -61,7 +61,7 @@
                     android:id="@+id/flashcard"
                     >
                     <TextView
-
+                        android:id="@+id/card_type"
                         android:text="Question:"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

@@ -18,6 +18,14 @@
     </string-array>
 
 
+    <string-array name="answer_list">
+        <item>A semaphore controls access to shared resources.</item>
+        <item>Memory management allocates and tracks memory use.</item>
+        <item>CPU scheduling maximizes CPU use and efficiency.</item>
+        <item>A process is a running program.</item>
+        <item>A file system organizes and manages files on storage.</item>
+    </string-array>
+
 
     <string name="card_index">0 / 0</string>
     <!-- Strings used for fragments for navigation -->
