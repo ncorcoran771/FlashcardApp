@@ -3,6 +3,7 @@ package com.hfad.flashcardapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -12,8 +13,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class Study_Screen extends AppCompatActivity {
-    int card_index = 0;
-    int deck_size = 25;
+    int card_index;
+    int deck_size;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +28,13 @@ public class Study_Screen extends AppCompatActivity {
         });
     }
 
+    private void _update_question() {
+        String[] string_array = getResources().getStringArray(R.array.question_list);
+        String question = string_array[card_index];
+        TextView question_region = findViewById(R.id.question_text);
+        question_region.setText(question);
+        this.deck_size = string_array.length;
+    }
     public void next_card(View view){
         card_index = (card_index + 1) % deck_size;
         updateView();
@@ -49,6 +57,7 @@ public class Study_Screen extends AppCompatActivity {
 
     public void updateView(){
         TextView index_view = findViewById(R.id.card_indexer);
+        _update_question();
         String index_string = (card_index + 1) + " / " + deck_size;
         index_view.setText(index_string);
     }
