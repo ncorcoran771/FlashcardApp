@@ -15,3 +15,13 @@ settings/colors	{Color }
 colors, make it more engaging
 Debouncing Flashcards
 
+
+//can commit api key, doesnt inherently give admin access, do commit these though
+# Firebase admin credentials
+serviceAccountKey.json
+
+# Firebase emulators
+firebase-debug.log
+.firebaserc.local
+
+
