@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void set_flashcard_settings(Button new_button){
         new_button.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
-        new_button.setGravity(Gravity.START | Gravity.CENTER_VERTICAL);
+        new_button.setGravity(Gravity.CENTER | Gravity.CENTER_VERTICAL);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 205, getResources().getDisplayMetrics())
