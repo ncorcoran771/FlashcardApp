@@ -2,8 +2,6 @@
 
 
 Dustin:
-fix display of decks -- probably gonna keep what we have
-
 database stuff obv -- main DB as decks{cards
 search/order stuff (either name or date created/last studied
 make sure newly added stuff is in order
@@ -14,6 +12,7 @@ add some preset logos ({},globe, +=*/,science beaker)
 settings/colors	{Color }
 colors, make it more engaging
 Debouncing Flashcards
+color -> gray background, engaging colors for flashcards, maybe try night mode
 
 
 //can commit api key, doesnt inherently give admin access, do commit these though
