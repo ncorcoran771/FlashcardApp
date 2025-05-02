@@ -1,0 +1,9 @@
+switch text on deck names from left -> center
+colors, make it more engaging
+
+fix display of decks -- probably gonna keep what we have
+database stuff obv -- main DB as decks{cards
+search/order stuff (either name or date created/last studied
+make sure newly added stuff is in order
+add some preset logos ({},globe, +=*/,science beaker)
+settings/colors	
