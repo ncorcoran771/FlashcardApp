@@ -5,6 +5,7 @@ Dustin:
 database stuff obv -- main DB as decks{cards
 search/order stuff (either name or date created/last studied
 make sure newly added stuff is in order
+Move Progress bar up and return down
 
 
 Nick:
@@ -13,6 +14,7 @@ settings/colors	{Color }
 colors, make it more engaging
 Debouncing Flashcards
 color -> gray background, engaging colors for flashcards, maybe try night mode
+Resize Icon Buttons
 
 
 //can commit api key, doesnt inherently give admin access, do commit these though
