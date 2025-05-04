@@ -1,0 +1,43 @@
+* [33m9db98dd[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mbetter-version-code[m[33m, [m[1;32mmaster[m[33m)[m WIP - nick corcoran local changes
+[31m|[m * [33m62a46f9[m[33m ([m[1;31morigin/master[m[33m)[m Real Working Debounce
+[31m|[m * [33m94c794b[m Working Debouncing
+[31m|[m * [33m583840a[m Fixed Flashcard Creation Problem
+[31m|[m * [33m1e7dbb6[m Fixed Access Time
+[31m|[m * [33m6846264[m Added Sorting
+[31m|[m * [33mc3964dd[m Attempted to imporve Colors
+[31m|[m * [33m187add3[m Relayedout study room screen
+[31m|[m * [33m3fc2ebb[m Working Database
+[31m|[m * [33m18894ac[m Working Flashcards from DB
+[31m|[m * [33mc5ed284[m Better Dataset
+[31m|[m * [33m8593d8c[m Saving flashcards Works and Can Query from DB
+[31m|[m * [33m506a79a[m Conflict
+[31m|[m * [33mf7a40ef[m Update notes.txt
+[31m|[m * [33meabf462[m Update notes.txt
+[31m|[m * [33mce7f364[m New Notes
+[31m|[m * [33m1ac0fce[m Create notes.txt
+[31m|[m * [33mc062963[m READMED
+[31m|[m * [33m4e46b04[m Centered Text
+[31m|[m * [33mea00dc0[m new push
+[31m|[m * [33mfd0f87a[m Update .gitignore
+[31m|[m[31m/[m  
+* [33ma166aa8[m Finialized Card Spinning
+* [33m991b15a[m Flipping Animation
+* [33m0c1853d[m Working Loading Bar
+* [33mbb2f526[m Can Go Between Questions
+* [33m4001d89[m Imma Save this and Play some video games till I get bored and come back
+* [33m473fba8[m Navigation Complete
+* [33me55a9df[m Study GUI Complete
+* [33m477944a[m Completed Navigation to New Page
+* [33m3c1d112[m Completed Frontend functionality for Card Creation
+* [33m126b49b[m Front End Aspect of flashcard creation done some light Back end needed
+* [33m8311b46[m Screen Transistion Works
+* [33m66712fd[m Home Screen Front-end built
+[32m|[m * [33mf4e9b4b[m[33m ([m[1;35mrefs/stash[m[33m)[m WIP on master: 0d4e8a9 message
+[32m|[m[32m/[m[34m|[m 
+[32m|[m * [33m1c4b02f[m index on master: 0d4e8a9 message
+[32m|[m[32m/[m  
+* [33m0d4e8a9[m message
+* [33md43c1bf[m Update .gitignore
+* [33m1cb86e1[m Add java, res, and manifest folders
+* [33m9dfe37d[m Update .gitignore
+* [33m0ab3795[m Initial commit

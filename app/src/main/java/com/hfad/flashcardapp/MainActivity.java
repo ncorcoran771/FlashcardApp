@@ -2,6 +2,7 @@ package com.hfad.flashcardapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -14,13 +15,22 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+
 public class MainActivity extends AppCompatActivity {
 
+    FirebaseFirestore db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        FirebaseApp.initializeApp(this);
+        db = FirebaseFirestore.getInstance();
+        Log.d("FIREBASE", "Firebase initialized: " + (FirebaseApp.getInstance() != null));
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -63,16 +73,27 @@ public class MainActivity extends AppCompatActivity {
         return new_button;
     }
     private void build_buttons(){
-        String[] card_subjects = getResources().getStringArray(R.array.flashcard_subjects);
+        CollectionReference set_dataset = db.collection("flashset_dataset");
         LinearLayout card_segment = findViewById(R.id.flashcard_buttons);
-        for(String subject : card_subjects) {
-            Button new_button = this.create_flashcard_button(subject);
-            card_segment.addView(new_button);
-        }
+
+        set_dataset.get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            String title = document.getString("title");
+                            Button new_button = this.create_flashcard_button(document.getString("title"));
+                            card_segment.addView(new_button);
+                        }
+                    } else {
+                        Log.e("Firestore", "Error getting documents: ", task.getException());
+                    }
+                });
     }
 
     public void goToStudy(View view){
+        String buttonText = ((Button) view).getText().toString();
         Intent intent = new Intent(MainActivity.this, Study_Screen.class);
+        intent.putExtra("flashcard_set", buttonText);
         startActivity(intent);
     }
 
