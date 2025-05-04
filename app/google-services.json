@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1059297380078",
+    "project_id": "flashcard-app-abd6a",
+    "storage_bucket": "flashcard-app-abd6a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059297380078:android:8a2b3da5a72c6deaa115ff",
+        "android_client_info": {
+          "package_name": "com.hfad.flashcardapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABpS84D0ge4FIqMoY30zGmC7Z8nRpmK6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

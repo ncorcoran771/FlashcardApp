@@ -22,6 +22,7 @@
             >
 
             <EditText
+                android:id="@+id/deck_name"
                 android:hint="Enter Deck Name:"
                 android:layout_height="50sp"
                 android:layout_width="match_parent"
