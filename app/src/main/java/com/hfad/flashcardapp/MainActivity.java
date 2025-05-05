@@ -80,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         for (QueryDocumentSnapshot document : task.getResult()) {
-                            String title = document.getString("title");
                             Button new_button = this.create_flashcard_button(document.getString("title"));
                             card_segment.addView(new_button);
                         }

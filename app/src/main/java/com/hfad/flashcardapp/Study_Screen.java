@@ -4,6 +4,7 @@ import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
@@ -12,17 +13,30 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+
 public class Study_Screen extends AppCompatActivity {
     int card_index = 0;
     int deck_size;
-    String[] question_array;
-    String[] answer_array;
+    ArrayList<String> question_array;
+    ArrayList<String> answer_array;
     MediaPlayer swoosh_sound;
+    FirebaseFirestore db;
+
+    String flash_title;
     boolean isFlipped = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +48,10 @@ public class Study_Screen extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             swoosh_sound = MediaPlayer.create(this, R.raw.swoosh);
             RelativeLayout flash_card = findViewById(R.id.flashcard);
+            flash_title = getIntent().getStringExtra("flashcard_set");
+            db = FirebaseFirestore.getInstance();
+
+
             flash_card.setOnClickListener(new View.OnClickListener() {
                 boolean isFlipped = false;
 
@@ -47,10 +65,10 @@ public class Study_Screen extends AppCompatActivity {
                     flash_card.animate().rotationYBy(180);
 
                     if (isFlipped) {
-                        questionText.setText(question_array[card_index]);
+                        questionText.setText(question_array.get(card_index));
                         typeText.setText("Question:");
                     } else {
-                        questionText.setText(answer_array[card_index]);
+                        questionText.setText(answer_array.get(card_index));
                         typeText.setText("Answer:");
                     }
 
@@ -64,14 +82,53 @@ public class Study_Screen extends AppCompatActivity {
         });
     }
 
+    private void _get_questions() {
+        CollectionReference card_collection = db.collection(flash_title);
+
+        card_collection.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
+                    String question = doc.getString("question");
+                    question_array.add(question);
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.e("FirestoreError", "Failed to get documents: ", e);
+            }
+        });
+
+    }
+
+    private void _get_answers() {
+        CollectionReference card_collection = db.collection(flash_title);
+
+        card_collection.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
+                    String answer = doc.getString("answer");
+                    answer_array.add(answer);
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.e("FirestoreError", "Failed to get documents: ", e);
+            }
+        });
+
+    }
 
     private void _update_question() {
-        question_array = getResources().getStringArray(R.array.question_list);
-        answer_array = getResources().getStringArray(R.array.answer_list);
-        String question = question_array[card_index];
+        _get_questions();
+        _get_answers();
+        String question = question_array.get(card_index);
         TextView question_region = findViewById(R.id.question_text);
         question_region.setText(question);
-        this.deck_size = question_array.length;
+        this.deck_size = question_array.size();
     }
     private void _update_progress_bar(){
         RelativeLayout full_bar = findViewById(R.id.full_bar);
