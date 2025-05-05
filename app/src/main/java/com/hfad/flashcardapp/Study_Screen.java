@@ -32,7 +32,7 @@ public class Study_Screen extends AppCompatActivity {
     int card_index = 0;
     int deck_size;
     ArrayList<String> question_array;
-    ArrayList<String> answer_array;
+    ArrayList<String> answer_array = new ArrayList<>();
     MediaPlayer swoosh_sound;
     FirebaseFirestore db;
 
@@ -50,6 +50,7 @@ public class Study_Screen extends AppCompatActivity {
             RelativeLayout flash_card = findViewById(R.id.flashcard);
             flash_title = getIntent().getStringExtra("flashcard_set");
             db = FirebaseFirestore.getInstance();
+            _update_question();
 
 
             flash_card.setOnClickListener(new View.OnClickListener() {
@@ -77,14 +78,15 @@ public class Study_Screen extends AppCompatActivity {
 
             });
 
-            updateView();
+
             return insets;
         });
     }
 
     private void _get_questions() {
         CollectionReference card_collection = db.collection(flash_title);
-
+        question_array = new ArrayList<>();
+        answer_array = new ArrayList<>();
         card_collection.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
@@ -92,6 +94,8 @@ public class Study_Screen extends AppCompatActivity {
                     String question = doc.getString("question");
                     question_array.add(question);
                 }
+                _set_text();
+                updateView();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -112,6 +116,7 @@ public class Study_Screen extends AppCompatActivity {
                     String answer = doc.getString("answer");
                     answer_array.add(answer);
                 }
+
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -122,13 +127,15 @@ public class Study_Screen extends AppCompatActivity {
 
     }
 
-    private void _update_question() {
-        _get_questions();
-        _get_answers();
+    private void _set_text(){
         String question = question_array.get(card_index);
         TextView question_region = findViewById(R.id.question_text);
         question_region.setText(question);
         this.deck_size = question_array.size();
+    }
+    private void _update_question() {
+        _get_questions();
+        _get_answers();
     }
     private void _update_progress_bar(){
         RelativeLayout full_bar = findViewById(R.id.full_bar);
@@ -161,10 +168,11 @@ public class Study_Screen extends AppCompatActivity {
 
     public void updateView(){
         TextView index_view = findViewById(R.id.card_indexer);
-        _update_question();
+
         _update_progress_bar();
         String index_string = (card_index + 1) + " / " + deck_size;
         index_view.setText(index_string);
+        _set_text();
     }
 }
 

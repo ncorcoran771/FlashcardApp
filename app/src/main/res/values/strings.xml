@@ -1,30 +1,6 @@
 <resources>
     <string name="app_name">Flashcard App</string>
-    <string-array name="flashcard_subjects">
-        <item>COSC 330 Quiz 1</item>
-        <item>COSC 450 Mini-test </item>
-        <item>Macro-economics Final</item>
-        <item>Calc 2 Quiz</item>
-        <item>Bio Lab Quiz</item>
-        <item>History 101</item>
-    </string-array>
 
-    <string-array name="question_list">
-        <item>What is a Semaphore?</item>
-        <item>Name one primary function of memory management in an OS?</item>
-        <item>What does CPU scheduling aim to achieve?</item>
-        <item>What is a process in the context of an OS?</item>
-        <item>What is the purpose of a file system in an OS?</item>
-    </string-array>
-
-
-    <string-array name="answer_list">
-        <item>A semaphore controls access to shared resources.</item>
-        <item>Memory management allocates and tracks memory use.</item>
-        <item>CPU scheduling maximizes CPU use and efficiency.</item>
-        <item>A process is a running program.</item>
-        <item>A file system organizes and manages files on storage.</item>
-    </string-array>
 
 
     <string name="card_index">0 / 0</string>
