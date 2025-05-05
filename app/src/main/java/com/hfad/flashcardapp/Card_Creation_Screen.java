@@ -125,6 +125,7 @@ public class Card_Creation_Screen extends AppCompatActivity {
 
         card_data.put("question", question_section.getText().toString());
         card_data.put("answer", answer_section.getText().toString());
+        card_data.put("index", index);
 
         return card_data;
     }

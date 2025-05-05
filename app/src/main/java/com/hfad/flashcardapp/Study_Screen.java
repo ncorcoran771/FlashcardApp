@@ -87,7 +87,7 @@ public class Study_Screen extends AppCompatActivity {
         CollectionReference card_collection = db.collection(flash_title);
         question_array = new ArrayList<>();
         answer_array = new ArrayList<>();
-        card_collection.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+        card_collection.orderBy("index").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                 for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
@@ -109,7 +109,7 @@ public class Study_Screen extends AppCompatActivity {
     private void _get_answers() {
         CollectionReference card_collection = db.collection(flash_title);
 
-        card_collection.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+        card_collection.orderBy("index").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                 for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
