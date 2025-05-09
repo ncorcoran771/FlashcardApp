@@ -20,17 +20,7 @@
             android:layout_height="100dp"
             android:background="@color/white"
             >
-            <Button
-                android:layout_width="130sp"
-                android:layout_height="70sp"
-                android:text="Return"
-                android:backgroundTint="#5391BD"
-                android:textSize="25sp"
-                android:layout_marginStart="15sp"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:onClick="goToMenu"
-                />
+
             <ImageButton
                 android:id="@+id/Options"
                 android:layout_width="80dp"
@@ -56,7 +46,7 @@
 
                 <RelativeLayout
                     android:layout_width="350sp"
-                    android:layout_height="270sp"
+                    android:layout_height="250sp"
                     android:background="@drawable/grey_border"
                     android:id="@+id/flashcard"
                     >
@@ -95,6 +85,29 @@
 
             </LinearLayout>
 
+        <RelativeLayout
+            android:id="@+id/full_bar"
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="35sp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="35sp"
+            android:layout_marginBottom="30sp"
+            android:background="@drawable/grey_border">
+
+            <RelativeLayout
+                android:id="@+id/loaded_bar"
+                android:layout_width="15sp"
+                android:layout_height="26sp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="#20db00">
+
+            </RelativeLayout>
+
+        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -102,7 +115,7 @@
             android:background="#5391BD"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-
+            android:gravity="center_horizontal"
 
             >
 
@@ -146,28 +159,18 @@
                     android:textSize="25sp" />
             </LinearLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="30sp"
-                android:background="@color/white"
+            <Button
+                android:layout_width="130sp"
+                android:layout_height="70sp"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="75sp"
-                android:layout_marginStart="35sp"
-                android:layout_marginEnd="35sp"
-                android:id="@+id/full_bar"
-                >
-
-                <RelativeLayout
-                    android:id="@+id/loaded_bar"
-                    android:layout_width="15sp"
-                    android:layout_height="30sp"
-                    android:layout_alignParentBottom="true"
-                    android:background="#80CEFF"
-                    >
-
-                </RelativeLayout>
-
-            </RelativeLayout>
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="37dp"
+                android:backgroundTint="#1fc902"
+                android:onClick="goToMenu"
+                android:text="Home"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp" />
 
         </RelativeLayout>
 

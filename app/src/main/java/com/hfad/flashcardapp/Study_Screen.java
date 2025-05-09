@@ -141,7 +141,7 @@ public class Study_Screen extends AppCompatActivity {
         RelativeLayout full_bar = findViewById(R.id.full_bar);
         RelativeLayout loaded_bar = findViewById(R.id.loaded_bar);
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) loaded_bar.getLayoutParams();
-        layoutParams.width = full_bar.getWidth() * (card_index + 1) / deck_size;
+        layoutParams.width = full_bar.getWidth() * (card_index + 1) / deck_size - 12;
         loaded_bar.setLayoutParams(layoutParams);
     }
     public void next_card(View view){

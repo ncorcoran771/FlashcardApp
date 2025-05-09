@@ -2,10 +2,9 @@
 
 
 Dustin:
-database stuff obv -- main DB as decks{cards
-search/order stuff (either name or date created/last studied
-make sure newly added stuff is in order
 Move Progress bar up and return down
+Add Dropdown to select Flashcard Order
+Change different ways to Order
 
 
 Nick:
