@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">Flashcard App</string>
 
+    <string-array name="sorting_mechanisms">
+        <item>Recently Created</item>
+        <item>Recently Accessed</item>
+        <item>Alphabetical A-Z</item>
+        <item>Alphabetical Z-A</item>
+    </string-array>
 
 
     <string name="card_index">0 / 0</string>

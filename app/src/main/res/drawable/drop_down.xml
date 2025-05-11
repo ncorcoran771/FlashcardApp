@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle"><!-- background color -->
+    <corners android:radius="3dp" /> <!-- how round the corners are -->
+    <size
+        android:width="48dp"
+        android:height="48dp" />
+</selector>

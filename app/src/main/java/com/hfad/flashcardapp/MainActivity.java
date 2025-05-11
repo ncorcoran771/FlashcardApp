@@ -1,6 +1,7 @@
 package com.hfad.flashcardapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.TypedValue;
@@ -57,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
                 (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 5, getResources().getDisplayMetrics()),
                 0
         );
+        new_button.setTextColor(Color.WHITE); // or any color
+        new_button.setBackgroundColor(Color.parseColor("#4285F4")); // custom hex color
         new_button.setLayoutParams(params);
     }
     private Button create_flashcard_button(String subject) {

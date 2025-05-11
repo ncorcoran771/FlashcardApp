@@ -2,9 +2,9 @@
 
 
 Dustin:
-Move Progress bar up and return down
-Add Dropdown to select Flashcard Order
 Change different ways to Order
+Disable Buttons while on keyboard
+Deletable Flashcards
 
 
 Nick:
