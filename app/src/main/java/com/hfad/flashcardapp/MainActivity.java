@@ -7,8 +7,10 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +21,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         FirebaseApp.initializeApp(this);
+        setSpinner();
         db = FirebaseFirestore.getInstance();
         Log.d("FIREBASE", "Firebase initialized: " + (FirebaseApp.getInstance() != null));
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -62,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
         new_button.setBackgroundColor(Color.parseColor("#4285F4")); // custom hex color
         new_button.setLayoutParams(params);
     }
+
+
     private Button create_flashcard_button(String subject) {
         Button new_button = new Button(this);
         new_button.setText(subject);
@@ -75,13 +81,60 @@ public class MainActivity extends AppCompatActivity {
 
         return new_button;
     }
+
+    private String getSortingMechanism(){
+        Spinner dropdown = findViewById(R.id.sorting_dropdown);
+        String dropdownSelection = dropdown.getSelectedItem().toString();
+
+        if(dropdownSelection.equals("Recently Created")){
+            return "creation_time";
+        }
+        else if(dropdownSelection.equals("Recently Accessed")){
+            return "access_time";
+        }
+        else{
+            return "title";
+        }
+    }
+
+    private Query.Direction getIfInverse(){
+        Spinner dropdown = findViewById(R.id.sorting_dropdown);
+        String dropdownSelection = dropdown.getSelectedItem().toString();
+
+        if(dropdownSelection.equals("Alphabetical A-Z")) {
+            return Query.Direction.ASCENDING;
+        }
+        else{
+            return Query.Direction.DESCENDING;
+        }
+    }
+
+    private void setSpinner() {
+        Spinner dropdown = findViewById(R.id.sorting_dropdown);
+
+        dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                build_buttons();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
+        });
+    }
+
+
+
     private void build_buttons(){
         CollectionReference set_dataset = db.collection("flashset_dataset");
         LinearLayout card_segment = findViewById(R.id.flashcard_buttons);
 
-        set_dataset.get()
+
+        set_dataset.orderBy(getSortingMechanism(), getIfInverse()).get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
+                        card_segment.removeAllViews();
                         for (QueryDocumentSnapshot document : task.getResult()) {
                             Button new_button = this.create_flashcard_button(document.getString("title"));
                             card_segment.addView(new_button);

@@ -29,7 +29,7 @@
                 android:entries="@array/sorting_mechanisms"
                 android:layout_centerVertical="true"
                 android:textColor="@color/white"
-                android:popupBackground="@color/purple" />
+                android:popupBackground="@color/white" />
 
             <ImageButton
                 android:id="@+id/New_Cards"
