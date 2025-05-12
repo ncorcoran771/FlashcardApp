@@ -20,9 +20,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -145,9 +149,32 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
+    private void updateAccessed(String flashcard_set) {
+        CollectionReference ref = db.collection("flashset_dataset");
+        long time = System.currentTimeMillis();
+
+        ref.whereEqualTo("title", flashcard_set)
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            // Found the document with matching title
+                            DocumentReference docRef = ref.document(document.getId());
+                            Map<String, Object> update = new HashMap<>();
+                            update.put("access_time", time);
+                            docRef.update(update)
+                                    .addOnFailureListener(e -> Log.e("Firestore", "Failed to update access_time", e));
+                        }
+                    } else {
+                        Log.e("Firestore", "Error finding document: ", task.getException());
+                    }
+                });
+    }
+
     public void goToStudy(View view){
         String buttonText = ((Button) view).getText().toString();
         Intent intent = new Intent(MainActivity.this, Study_Screen.class);
+        updateAccessed(buttonText);
         intent.putExtra("flashcard_set", buttonText);
         startActivity(intent);
     }
