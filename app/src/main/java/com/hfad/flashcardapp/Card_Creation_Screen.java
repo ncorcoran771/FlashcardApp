@@ -29,6 +29,7 @@ public class Card_Creation_Screen extends AppCompatActivity {
     int starting_number_of_cards = 3;
     FirebaseFirestore db;
 
+    boolean initiallyCreated = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +39,11 @@ public class Card_Creation_Screen extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             db = FirebaseFirestore.getInstance();
-            for(int i = 0; i < starting_number_of_cards; i++) {
-                add_card(getWindow().getDecorView());
+            if(!initiallyCreated) {
+                for (int i = 0; i < starting_number_of_cards; i++) {
+                    add_card(getWindow().getDecorView());
+                }
+                initiallyCreated = true;
             }
             return insets;
         });
@@ -166,6 +170,7 @@ public class Card_Creation_Screen extends AppCompatActivity {
         LinearLayout card_container = findViewById(R.id.flashcard_container);
         RelativeLayout new_card = _create_card();
         card_container.addView(new_card);
+        Log.d("MyTag", "This is a debug message");
     }
 
     public void goToMenu(View view){

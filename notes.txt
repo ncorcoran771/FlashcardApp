@@ -2,8 +2,6 @@
 
 
 Dustin:
-Change different ways to Order
-Disable Buttons while on keyboard
 Deletable Flashcards
 
 
@@ -12,8 +10,6 @@ add some preset logos ({},globe, +=*/,science beaker)
 settings/colors	{Color }
 colors, make it more engaging
 Debouncing Flashcards
-color -> gray background, engaging colors for flashcards, maybe try night mode
-Resize Icon Buttons
 
 
 //can commit api key, doesnt inherently give admin access, do commit these though
