@@ -35,9 +35,11 @@ public class Study_Screen extends AppCompatActivity {
     ArrayList<String> answer_array = new ArrayList<>();
     MediaPlayer swoosh_sound;
     FirebaseFirestore db;
+    long last_clicked = 0;
 
     String flash_title;
     boolean isFlipped = false;
+    boolean isFlipping = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,22 +60,27 @@ public class Study_Screen extends AppCompatActivity {
 
                 @Override
                 public void onClick(View v) {
-                    TextView questionText = findViewById(R.id.question_text);
-                    TextView typeText = findViewById(R.id.card_type);
-                    RelativeLayout flash_card = findViewById(R.id.flashcard);
-                    flash_card.setRotationY(flash_card.getRotationY() + 180);
-                    swoosh_sound.start();
-                    flash_card.animate().rotationYBy(180);
 
-                    if (isFlipped) {
-                        questionText.setText(question_array.get(card_index));
-                        typeText.setText("Question:");
-                    } else {
-                        questionText.setText(answer_array.get(card_index));
-                        typeText.setText("Answer:");
+                    if(!isFlipping) {
+                        isFlipping = true;
+                        TextView questionText = findViewById(R.id.question_text);
+                        TextView typeText = findViewById(R.id.card_type);
+                        RelativeLayout flash_card = findViewById(R.id.flashcard);
+                        flash_card.setRotationY(flash_card.getRotationY() + 180);
+                        swoosh_sound.start();
+                        flash_card.animate().rotationYBy(180);
+
+                        if (isFlipped) {
+                            questionText.setText(question_array.get(card_index));
+                            typeText.setText("Question:");
+                        } else {
+                            questionText.setText(answer_array.get(card_index));
+                            typeText.setText("Answer:");
+                        }
+
+                        isFlipped = !isFlipped;
+                        isFlipping=false;
                     }
-
-                    isFlipped = !isFlipped;
                     };
 
             });

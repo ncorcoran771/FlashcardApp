@@ -8,8 +8,6 @@ Deletable Flashcards
 Nick:
 add some preset logos ({},globe, +=*/,science beaker)
 settings/colors	{Color }
-colors, make it more engaging
-Debouncing Flashcards
 
 
 //can commit api key, doesnt inherently give admin access, do commit these though
