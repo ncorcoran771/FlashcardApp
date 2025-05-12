@@ -60,28 +60,33 @@ public class Study_Screen extends AppCompatActivity {
 
                 @Override
                 public void onClick(View v) {
-
-                    if(!isFlipping) {
+                    if (!isFlipping) {
                         isFlipping = true;
+
                         TextView questionText = findViewById(R.id.question_text);
                         TextView typeText = findViewById(R.id.card_type);
                         RelativeLayout flash_card = findViewById(R.id.flashcard);
-                        flash_card.setRotationY(flash_card.getRotationY() + 180);
+
                         swoosh_sound.start();
-                        flash_card.animate().rotationYBy(180);
+                        flash_card.setRotationY(flash_card.getRotationY() + 180);
+                        flash_card.animate()
+                                .rotationYBy(180)
+                                .setDuration(300) // set duration for animation
+                                .withEndAction(() -> {
+                                    // Flip text after animation finishes
+                                    if (isFlipped) {
+                                        questionText.setText(question_array.get(card_index));
+                                        typeText.setText("Question:");
+                                    } else {
+                                        questionText.setText(answer_array.get(card_index));
+                                        typeText.setText("Answer:");
+                                    }
 
-                        if (isFlipped) {
-                            questionText.setText(question_array.get(card_index));
-                            typeText.setText("Question:");
-                        } else {
-                            questionText.setText(answer_array.get(card_index));
-                            typeText.setText("Answer:");
-                        }
-
-                        isFlipped = !isFlipped;
-                        isFlipping=false;
+                                    isFlipped = !isFlipped;
+                                    isFlipping = false; // allow flipping again
+                                });
                     }
-                    };
+                }
 
             });
 
