@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 0
         );
         new_button.setTextColor(Color.WHITE); // or any color
-        new_button.setBackgroundColor(Color.parseColor("#4285F4")); // custom hex color
+        new_button.setBackgroundColor(Color.parseColor("#4CAF50")); // custom hex color
         new_button.setLayoutParams(params);
     }
 
