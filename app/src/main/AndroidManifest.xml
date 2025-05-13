@@ -18,8 +18,14 @@
             android:theme="@style/Theme.FlashcardApp" />
         <activity
             android:name=".Card_Creation_Screen"
+            android:exported="false" />
+
+        <activity android:name=".SettingsActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize"/>
+            android:theme="@style/Theme.FlashcardApp"
+            android:label="Settings"
+        />
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

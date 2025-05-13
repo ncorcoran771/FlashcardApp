@@ -187,4 +187,3 @@ public class Study_Screen extends AppCompatActivity {
         _set_text();
     }
 }
-

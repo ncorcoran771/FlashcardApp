@@ -129,6 +129,7 @@ public class Card_Creation_Screen extends AppCompatActivity {
 
         card_data.put("question", question_section.getText().toString());
         card_data.put("answer", answer_section.getText().toString());
+
         card_data.put("index", index);
 
         return card_data;
@@ -182,6 +183,12 @@ public class Card_Creation_Screen extends AppCompatActivity {
         Intent intent = new Intent(Card_Creation_Screen.this, Study_Screen.class);
         _save_cards();
         intent.putExtra("flashcard_set", _get_flash_title());
+        startActivity(intent);
+    }
+    public void goToSettings(View view){
+        System.out.println("Settings button pressed");
+        // Start the SettingsActivity
+        Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
     }
 }

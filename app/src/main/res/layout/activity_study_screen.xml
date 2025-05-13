@@ -8,13 +8,11 @@
     tools:context=".Study_Screen"
     android:background="#dedddc">
 
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:weightSum="1"
-        >
+        android:weightSum="1">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -22,10 +20,14 @@
             android:background="@color/blue"
             >
 
+
+
+
             <ImageButton
                 android:id="@+id/Options"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
+                android:onClick="goToSettings"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_marginEnd="13dp"
 
                 android:layout_alignParentEnd="true"
@@ -36,14 +38,14 @@
 
         </RelativeLayout>
 
-            <LinearLayout
-                android:id="@+id/flashcard_container"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:gravity="center"
-                >
+        <LinearLayout
+            android:id="@+id/flashcard_container"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center">
+
 
                 <RelativeLayout
                     android:layout_width="350sp"
@@ -83,10 +85,8 @@
                         android:layout_centerInParent="true"
                         android:layout_alignParentBottom="true"
                         />
-
                 </RelativeLayout>
 
-            </LinearLayout>
 
         <RelativeLayout
             android:id="@+id/full_bar"
@@ -112,9 +112,13 @@
 
         </RelativeLayout>
 
+        </LinearLayout>
+
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="250dp"
+
             android:background="@color/blue"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
@@ -122,14 +126,14 @@
 
             >
 
+
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="150sp"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentTop="true"
-                android:gravity="center"
-                >
+                android:gravity="center">
 
             <Button
                 android:id="@+id/back_button"
@@ -142,13 +146,14 @@
                 android:onClick="prev_card"
                 />
 
-            <TextView
-                android:id="@+id/card_indexer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/card_index"
-                android:textSize="25sp"
-                />
+
+                <TextView
+                    android:id="@+id/card_indexer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_index"
+                    android:textSize="25sp"
+                    android:textColor="@color/textPrimary" />
 
                 <Button
                     android:id="@+id/save_button"
@@ -174,6 +179,7 @@
                 android:text="Home"
                 android:textColor="@color/white"
                 android:textSize="25sp" />
+
 
         </RelativeLayout>
 

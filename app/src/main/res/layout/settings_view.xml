@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settings"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="0dp"
+        tools:ignore="UseSwitchCompatOrMaterialXml"
+        tools:layout_editor_absoluteX="-51dp"
+        tools:layout_editor_absoluteY="-95dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#5391BD">
+
+            <Button
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:text="Back"
+                android:onClick="goBack" />
+
+            <EditText
+                android:id="@+id/settings_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_toStartOf="@id/back_button"
+                android:backgroundTint="@android:color/transparent"
+                android:hint="Settings:"
+                android:textColor="@color/white"
+                android:textColorHint="#D3D3D3"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <Switch
+            android:id="@+id/soundSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:padding="16dp"
+            android:text="Sound Effects"
+            android:textSize="18sp" />
+
+        <Switch
+            android:id="@+id/cardDirectionSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:padding="16dp"
+            android:text="Show Definition First"
+            android:textSize="18sp" />
+
+        <Switch
+            android:id="@+id/nightmodeSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:padding="16dp"
+            android:text="Night Mode"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Font Size - 30sp by default"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Font Size Here"
+            android:inputType="number"
+            android:padding="16dp"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Use Custom Database - Advanced Users Only"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/customDatabaseEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Database Key Here - ENSURE PROPER FORMAT"
+            android:inputType="number"
+            android:padding="16dp"
+            android:textSize="18sp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/preview_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@android:color/white">
+
+            <TextView
+                android:id="@+id/preview_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="Flashcard Text Preview"
+                android:textStyle="bold"
+                android:textSize="30sp" />
+        </androidx.cardview.widget.CardView>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp">
+
+            <Button
+                android:id="@+id/reset_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:textSize="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="36dp"
+                android:onClick="resetSettings"
+                android:text="Reset Settings" />
+
+            <Button
+                android:id="@+id/apply_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:textSize="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="36dp"
+                android:onClick="saveSettings"
+                android:text="Apply Settings" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

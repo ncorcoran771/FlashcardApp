@@ -52,6 +52,8 @@
                 android:src="@drawable/settings"
                 android:scaleType="centerInside"
                 android:background="@drawable/settings"
+                android:onClick="goToSettings"
+
             />
     </RelativeLayout>
 

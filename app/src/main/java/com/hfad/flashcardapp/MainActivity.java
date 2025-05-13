@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         FirebaseApp.initializeApp(this);
+
         setSpinner();
         db = FirebaseFirestore.getInstance();
         Log.d("FIREBASE", "Firebase initialized: " + (FirebaseApp.getInstance() != null));
@@ -178,4 +179,12 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("flashcard_set", buttonText);
         startActivity(intent);
     }
+
+    public void goToSettings(View view){
+        System.out.println("Settings button pressed");
+        // Start the SettingsActivity
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
 }

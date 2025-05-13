@@ -52,4 +52,9 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+
+    <string-array name="color_settings">
+        <item>Light Mode (Default)</item>
+        <item>Dark Mode</item>
+    </string-array>
 </resources>
