@@ -75,4 +75,12 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, Study_Screen.class);
         startActivity(intent);
     }
+
+    public void goToSettings(View view){
+        System.out.println("Settings button pressed");
+        // Start the SettingsActivity
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
 }

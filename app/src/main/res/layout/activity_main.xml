@@ -40,6 +40,7 @@
                 android:src="@drawable/settings"
                 android:scaleType="centerInside"
                 android:background="@drawable/icon_button_background"
+                android:onClick="goToSettings"
             />
     </RelativeLayout>
 

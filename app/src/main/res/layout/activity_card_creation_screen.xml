@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -11,63 +12,52 @@
         android:orientation="vertical"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:weightSum="1"
-        >
+        android:weightSum="1">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="#5391BD"
-
-            android:gravity="center"
-            >
+            android:background="@color/primaryColor"
+            android:gravity="center">
 
             <EditText
                 android:hint="Enter Deck Name:"
                 android:layout_height="50sp"
                 android:layout_width="match_parent"
-                android:textColor="@color/white"
-                android:textColorHint="#D3D3D3"
-                android:textSize="30sp"
-                />
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/hintTextColor"
+                android:textSize="30sp" />
         </RelativeLayout>
 
         <ScrollView
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            >
+            android:layout_weight="1">
+
             <LinearLayout
                 android:id="@+id/flashcard_container"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:orientation="vertical"
-                >
-
-            </LinearLayout>
+                android:orientation="vertical" />
         </ScrollView>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:background="@drawable/border"
-            android:layout_alignParentBottom="true"
-
-
-            >
+            android:layout_alignParentBottom="true">
 
             <Button
                 android:id="@+id/back_button"
                 android:layout_width="130sp"
                 android:layout_height="70sp"
-                android:backgroundTint="#5391BD"
+                android:backgroundTint="@color/primaryColor"
                 android:text="Back"
                 android:textSize="25sp"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="30sp"
                 android:layout_marginStart="15sp"
-                android:onClick="goToMenu"
-            />
+                android:onClick="goToMenu" />
 
             <ImageButton
                 android:id="@+id/New_Cards"
@@ -78,28 +68,20 @@
                 android:src="@drawable/add"
                 android:scaleType="centerInside"
                 android:background="@drawable/blue_icon_button_background"
-                android:onClick="add_card"
-                />
+                android:onClick="add_card" />
 
             <Button
                 android:id="@+id/save_button"
                 android:layout_width="130sp"
                 android:layout_height="70sp"
-                android:backgroundTint="#5391BD"
+                android:backgroundTint="@color/primaryColor"
                 android:text="Save"
                 android:textSize="25sp"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginBottom="30sp"
                 android:layout_marginEnd="15sp"
-                android:onClick="goToStudy"
-                />
-
-
+                android:onClick="goToStudy" />
         </RelativeLayout>
     </LinearLayout>
-
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

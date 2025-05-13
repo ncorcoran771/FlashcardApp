@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#8E24AA</color>
+    <color name="colorPrimaryVariant">#6A1B9A</color>
+    <color name="colorOnPrimary">#000000</color>
+
+    <color name="colorSecondary">#00574B</color>
+    <color name="colorSecondaryVariant">#003D33</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+
+    <color name="colorBackground">#121212</color>
+    <color name="colorOnBackground">#FFFFFF</color>
+
+    <color name="colorSurface">#1E1E1E</color>
+    <color name="colorOnSurface">#FFFFFF</color>
+
+    <color name="colorError">#D81B60</color>
+    <color name="colorOnError">#FFFFFF</color>
+
+    <!-- Additional colors -->
+    <color name="buttonReturnBackground">#3A6A8C</color>
+    <color name="buttonPrevNextBackground">#606060</color>
+    <color name="textPrimary">#FFFFFF</color>
+    <color name="textSecondary">#BBBBBB</color>
+    <color name="progressBarLoaded">#4BA3C7</color>
+    <color name="primaryColor">#1E3A5F</color> <!-- Darker shade for dark mode -->
+    <color name="textColor">#FFFFFF</color>
+    <color name="hintTextColor">#AAAAAA</color>
+    <color name="white">#000000</color>
+    <color name="black">#000000</color>
+
+</resources>
